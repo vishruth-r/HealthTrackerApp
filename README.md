@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# 🩺 Proactively Health App – React Native Implementation
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+This React Native mobile application was developed as part of the **Proactively App Development Task**. It is a feature-rich health tracking platform built with a strong focus on usability, responsiveness, and local-first performance. The app implements key features outlined in the design, including health metrics tracking, authentication, push notifications, and animated UI components.
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## ✅ Features Implemented
 
-   ```bash
-   npx expo start
-   ```
+### 🔐 Authentication & Session Management
+- Login functionality with hardcoded credentials.
+- Session persistence using local storage.
+- Automatic redirection to Home on app restart if logged in.
+- Logout functionality to clear session and return to login.
 
-In the output, you'll find options to open the app in a
+### 🏠 Home Screen
+- **Custom Header** following the Figma design.
+- **Health Score Banner**:
+  - Progress bar with gradient fill based on score.
+  - Animated arrow indicating score progress (moves from left to right).
+  - Health score dynamically increases as To-Do list tasks are completed.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Upcoming Appointment Card**:
+  - Displays doctor's name, time, and date of the next appointment.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Health Overview Section**:
+  - **Steps Card**: Input steps manually; persists across sessions.
+  - **BMI Card**: Takes height and weight; calculates BMI.
+  - **Sleep Card**: Add/remove hours using custom buttons.
 
-## Get a fresh project
+- **To-Do List with Progress Bar**:
+  - Task checklist with interactive toggle.
+  - Progress bar reflects completed tasks.
+  - Completion of tasks increases the health score.
 
-When you're ready, run:
+### 📅 Appointment Details Screen
+- Displays full appointment info including doctor name, image, time, and date.
+- "Join Meeting" button opens a Google Meet link using device intent.
+- Screen is accessible via notification tap or in-app card.
 
-```bash
-npm run reset-project
-```
+### 🔔 Push Notifications (FCM)
+- Integrated with Firebase Cloud Messaging.
+- Handles notifications in all app states (foreground, background, killed).
+- Clicking a notification:
+  - Opens the app if closed.
+  - Navigates to the Appointment Details screen with correct data.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Notification payload includes appointment details and screen target.
+- Can be tested using Postman with FCM HTTP v1 API.
 
-## Learn more
+### 👤 Account Screen
+- Displays static profile image and user name.
+- Shows the device's **FCM Token**, which can be copied for testing purposes.
+- Logout button clears the session and navigates back to login.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ✨ Bonus Features
+- 🔁 **Animated Health Banner Logo**: Logo moves from left to right and loops.
+- 🎯 **Task-Driven Score Logic**: Completing items in the To-Do list directly increases the health score.
+- 📋 **FCM Token Display**: Easily accessible and copyable from the Account screen for push testing.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧪 Notes
+- All user inputs (steps, BMI, sleep, tasks) are saved locally and restored on app restart.
+- All screens follow the Figma design in layout, spacing, color, and interactivity.
+- Notifications include deep linking logic based on payload.
