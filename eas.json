@@ -3,12 +3,18 @@
     "version": ">= 16.9.0",
     "appVersionSource": "remote"
   },
-  "build": {
+    "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
     },
     "preview": {
+      "android": {
+        "buildType": "apk"
+      },
       "distribution": "internal"
     },
     "production": {

@@ -37,3 +37,13 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+# Ignore local config
+.env
+google-services.json
+
+# Ignore build output
+/build
+/dist
+
+# Ignore log files
+*.log

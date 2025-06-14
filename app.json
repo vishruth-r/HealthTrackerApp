@@ -4,7 +4,7 @@
     "slug": "HealthTrackerApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/app-icon.png",
     "scheme": "healthtrackerapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,8 +12,9 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/app-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -34,7 +35,11 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-notifications",
+    "@react-native-firebase/app",
+    "@react-native-firebase/messaging"
+
     ],
     "experiments": {
       "typedRoutes": true
@@ -44,6 +49,7 @@
       "eas": {
         "projectId": "e09e6a07-4012-4c65-9a9b-58d6aa8053c1"
       }
-    }
+    },
+    "owner": "vishruth-r"
   }
 }
